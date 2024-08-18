@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes or No</title>
+  <style>
+    /* Optional styling */
+   body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: lightpink;
+        flex-direction:column;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #heading {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    #image {
+      max-width: 150px;
+      height: auto;
+      margin-top: 20px;
+    }
+     #yesButton, #noButton{
+    background: white;
+    padding:8px 16px;
+    border:none;
+    border-radius:5px;
+    }
+
+    #heading_dev{
+      font-weight: bold;
+    }
+   
+  </style>
+</head>
+<body>
+  <h1 id="heading_dev">Developer: THE KING</h1>
+  <h1 id="heading">Are you Stupid?🤔</h1>
+  <p>Made with heart by ALISAIM</p>
+  <img id="image" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHIzN3UzeWdiYXdhdnZueWR3eGJoNGJodjkxazV4OGRqNW1xbzI5eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lKXEBR8m1jWso/giphy.gif" alt="Placeholder Image">
+  <div>
+  <button id="yesButton">Yes</button>
+  <button id="noButton" onmouseover="moveButton()">No</button> </div>
+  
+  
+  <!-- Optional JavaScript for button functionality -->
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const heading = document.getElementById('heading');
+    const image = document.getElementById('image');
+    
+    function moveButton() {
+      const newX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+      const newY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+      noButton.style.position = 'absolute';
+      noButton.style.left = newX + 'px';
+      noButton.style.top = newY + 'px';
+    }
+    
+    yesButton.addEventListener('click', () => {
+      heading.textContent = "Hehe, I knew it!😂😂";
+      image.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG1xa2N1emloaW0zN3A1dDV3dWFoYmgyNnVpenhqZm95ZDkya2hkaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fUYhyT9IjftxrxJXcE/giphy.webp";
+      yesButton.style.display = "none";
+      noButton.style.display = "none";// Change image source if desired
+    });
+    
+    noButton.addEventListener('click', () => {
+      heading.textContent = "Sorry that you didn't like the image!";
+      image.src = "https://via.placeholder.com/150"; // Reset image source if desired
+    });
+  </script>
+</body>
+</html>
